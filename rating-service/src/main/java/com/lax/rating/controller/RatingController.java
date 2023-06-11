@@ -18,7 +18,7 @@ public class RatingController {
     private RatingService ratingService;
 
     //create Rating
-    //@PreAuthorize("hasAuthority('Admin')")
+    //@PreAuthorize("hasAuthority('Admin')") //only admin directly call this method
     @PostMapping
     public ResponseEntity<Rating> create(@RequestBody Rating rating){
         return new ResponseEntity<>(ratingService.create(rating), HttpStatus.CREATED);
